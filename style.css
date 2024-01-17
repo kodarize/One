@@ -1,0 +1,364 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #333;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.container {
+    max-width: 600px;
+    margin: 20px;
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+h1, h2 {
+    color: inherit;
+}
+
+.motto {
+    font-style: italic;
+    color: inherit;
+    margin-bottom: 20px;
+}
+
+.alpha-info {
+    background-color: #444;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.alpha-info.dark-mode {
+    background-color: #444;
+    color: #fff;
+}
+
+.price {
+    font-size: 28px;
+    color: inherit;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.feature-list {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.provided-by,
+.transparency {
+    font-size: 12px;
+    color: #555;
+    margin-top: 20px;
+}
+
+.contact-form {
+    width: 80%;
+    margin: 20px auto;
+}
+
+input, textarea, button, select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    color: #fff;
+    border: 1px solid #fff;
+    background-color: #333;
+    cursor: pointer;
+}
+
+input.dark-mode, textarea.dark-mode, button.dark-mode, select.dark-mode {
+    background-color: #333;
+    color: #fff;
+    border: 1px solid #fff;
+}
+
+#terms, #privacy {
+    color: #0080ff;
+    text-decoration: underline;
+    cursor: pointer;
+    margin-top: 20px;
+    display: inline-block;
+    color: inherit;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    align-items: center;
+    justify-content: center;
+}
+
+.popup-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 600px;
+    position: relative;
+    text-align: left;
+    color: #333;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+#termsPopup .popup-content,
+#privacyPopup .popup-content {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.toggle-dark-mode {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.toggle-dark-mode:hover {
+    transform: scale(1.2);
+}
+
+.toggle-dark-mode svg {
+    width: 24px;
+    height: 24px;
+    fill: #0080ff;
+}
+
+.message {
+    margin-top: 20px;
+    color: #4CAF50;
+    font-weight: bold;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700;800;900&display=swap");
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    height: 100%;
+    min-height: 100vh;
+}
+
+body {
+    display: grid;
+    place-items: center;
+    font-family: "League Spartan", system-ui, sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.2;
+    background-color: #212121;
+    color: #ddd;
+}
+
+ul {
+    list-style: none;
+}
+
+.main {
+    max-width: 75rem;
+    padding: 3em 1.5em;
+}
+
+.main__heading {
+    font-weight: 600;
+    font-size: 2.25em;
+    margin-bottom: 0.75em;
+    text-align: center;
+    color: #eceff1;
+}
+
+.cards {
+    position: relative;
+}
+
+.cards__inner {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2.5em;
+}
+
+.card {
+    --flow-space: 0.5em;
+    --hsl: var(--hue), var(--saturation), var(--lightness);
+    flex: 1 1 14rem;
+    padding: 1.5em 2em;
+    display: grid;
+    grid-template-rows: auto auto auto 1fr;
+    align-items: start;
+    gap: 1.25em;
+    color: #eceff1;
+    background-color: #2b2b2b;
+    border: 1px solid #eceff133;
+    border-radius: 15px;
+    transition: background 400ms ease;
+    will-change: background;
+}
+
+.card:hover {
+    --lightness: 95%;
+    background: hsla(var(--hsl), 0.1);
+}
+
+.card:nth-child(1) {
+    --hue: 331;
+    --saturation: 64%;
+    --lightness: 52%;
+}
+
+.card:nth-child(2) {
+    --hue: 175;
+    --saturation: 59%;
+    --lightness: 40%;
+}
+
+.card:nth-child(3) {
+    --hue: 68;
+    --saturation: 100%;
+    --lightness: 30%;
+}
+
+.card:nth-child(4) {
+    --hue: 331;
+    --saturation: 64%;
+    --lightness: 52%;
+}
+
+.card:nth-child(5) {
+    --hue: 175;
+    --saturation: 59%;
+    --lightness: 40%;
+}
+
+.card:nth-child(6) {
+    --hue: 68;
+    --saturation: 100%;
+    --lightness: 30%;
+}
+
+.card:nth-child(7) {
+    --hue: 68;
+    --saturation: 100%;
+    --lightness: 30%;
+}
+
+.card__bullets {
+    line-height: 1.4;
+}
+
+.card__bullets li::before {
+    display: inline-block;
+    content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512' width='16' title='check' fill='%23dddddd'%3E%3Cpath d='M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z' /%3E%3C/svg%3E");
+    transform: translatey(0.25ch);
+    margin-right: 1ch;
+}
+
+.card__heading {
+    font-size: 1.05em;
+    font-weight: 600;
+}
+
+.card__price {
+    font-size: 1.75em;
+    font-weight: 700;
+}
+
+.flow > * + * {
+    margin-top: var(--flow-space, 1.25em);
+}
+
+.cta {
+    display: block;
+    align-self: end;
+    margin: 1em 0 0.5em 0;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    background-color: #0d0d0d;
+    padding: 0.7em;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    user-select: none;
+    opacity: var(--opacity, 0);
+    -webkit-mask: radial-gradient(
+        25rem 25rem at var(--x) var(--y),
+        #000 1%,
+        transparent 50%
+    );
+    mask: radial-gradient(
+        25rem 25rem at var(--x) var(--y),
+        #000 1%,
+        transparent 50%
+    );
+    transition: 400ms mask ease;
+    will-change: mask;
+}
+
+.overlay .card {
+    background-color: hsla(var(--hsl), 0.15);
+    border-color: hsla(var(--hsl), 1);
+    box-shadow: 0 0 0 1px inset hsl(var(--hsl));
+}
+
+.overlay .cta {
+    display: none;
+}
+
+.toggle-dark-mode {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.toggle-dark-mode:hover {
+    transform: scale(1.2);
+}
+
+.toggle-dark-mode svg {
+    width: 24px;
+    height: 24px;
+    fill: #0080ff;
+}
+
+.message {
+    margin-top: 20px;
+    color: #4CAF50;
+    font-weight: bold;
+}
