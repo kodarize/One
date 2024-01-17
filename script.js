@@ -1,5 +1,10 @@
 console.clear();
 
+(function() {
+    // https://dashboard.emailjs.com/admin/account
+    emailjs.init('r7fGMu5Cc-7oKVLx9');
+})();
+
 const cardsContainer = document.querySelector(".cards");
 const cardsContainerInner = document.querySelector(".cards__inner");
 const cards = Array.from(document.querySelectorAll(".card"));
@@ -63,14 +68,20 @@ function closePopup(id) {
 
 document.getElementById("emailForm").addEventListener("submit", function (event) {
     event.preventDefault();
-    // Code to handle form submission goes here
-    // You may need server-side scripting for this
-    document.getElementById("message").innerText = "Thank you for your interest! We'll be in touch soon.";
-    document.getElementById("message").style.color = "#4CAF50";
-    document.getElementById("container").style.opacity = 0;
-    document.getElementById("container").style.transform = "translateY(20px)";
-    setTimeout(function () {
-        document.getElementById("container").style.opacity = 1;
-        document.getElementById("container").style.transform = "translateY(0)";
-    }, 500);
+    // these IDs from the previous steps
+    emailjs.sendForm('service_kodair_one', 'template_kodair_one', this)
+    .then(function() {
+        console.log('SUCCESS!');
+        document.getElementById("message").innerText = "Thank you for your interest! We'll be in touch soon.";
+        document.getElementById("message").style.color = "#4CAF50";
+        document.getElementById("container").style.opacity = 0;
+        document.getElementById("container").style.transform = "translateY(20px)";
+        setTimeout(function () {
+            document.getElementById("container").style.opacity = 1;
+            document.getElementById("container").style.transform = "translateY(0)";
+        }, 500);
+    }, function(error) {
+        console.log('FAILED...', error);
+    });
+    
 });
